@@ -1,0 +1,8 @@
+{
+  "name": "Mermaid AI Architect",
+  "description": "An intelligent diagramming tool that converts text descriptions and hand-drawn sketches into Mermaid.js diagrams using Gemini 2.5 and 3.0 models.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
