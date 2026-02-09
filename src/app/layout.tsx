@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -23,6 +25,8 @@ export default function RootLayout({
       </head>
       <body className="selection:bg-brand-500/30">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

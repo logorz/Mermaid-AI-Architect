@@ -11,7 +11,8 @@ import { GALLERY_EXAMPLES } from '../constants';
 import { 
   SunIcon,
   MoonIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
+  ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/outline';
 
 const Page = () => {
@@ -302,6 +303,16 @@ const Page = () => {
         </div>
         
         <div className="flex items-center gap-3">
+            <a 
+              href="https://github.com/yourusername/mermaid-ai-architect"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 text-slate-500 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400 rounded-lg hover:bg-slate-100/80 dark:hover:bg-slate-800/80 backdrop-blur-sm transition-all duration-300"
+              title="GitHub"
+            >
+              <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+            </a>
+            
             <button 
               onClick={() => setIsDarkMode(!isDarkMode)}
               className="p-2.5 text-slate-500 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400 rounded-lg hover:bg-slate-100/80 dark:hover:bg-slate-800/80 backdrop-blur-sm transition-all duration-300"
