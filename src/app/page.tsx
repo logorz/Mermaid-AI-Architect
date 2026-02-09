@@ -304,7 +304,7 @@ const Page = () => {
         
         <div className="flex items-center gap-3">
             <a 
-              href="https://github.com/yourusername/mermaid-ai-architect"
+              href="https://github.com/logorz/Mermaid-AI-Architect"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 text-slate-500 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400 rounded-lg hover:bg-slate-100/80 dark:hover:bg-slate-800/80 backdrop-blur-sm transition-all duration-300"
