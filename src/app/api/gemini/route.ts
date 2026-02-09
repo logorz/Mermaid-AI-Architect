@@ -24,6 +24,9 @@ interface OptimizeRequest {
 }
 
 export async function POST(request: NextRequest) {
+  // Get the origin from the request headers
+  const origin = request.headers.get('origin') || request.headers.get('referer') || 'https://mermaid-ai-architect.vercel.app';
+  
   // Check if API key is available
   if (!process.env.API_KEY) {
     return NextResponse.json(
@@ -150,7 +153,7 @@ async function generateFromHistory(
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.API_KEY}`,
-        'HTTP-Referer': 'http://localhost:3000', // Replace with your actual domain
+        'HTTP-Referer': origin,
         'X-Title': 'Mermaid AI Architect'
       },
       body: JSON.stringify({
@@ -214,7 +217,7 @@ Return the result in JSON format with two fields:
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.API_KEY}`,
-        'HTTP-Referer': 'http://localhost:3000', // Replace with your actual domain
+        'HTTP-Referer': origin,
         'X-Title': 'Mermaid AI Architect'
       },
       body: JSON.stringify({
@@ -286,7 +289,7 @@ Optimized Prompt:
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.API_KEY}`,
-        'HTTP-Referer': 'http://localhost:3000', // Replace with your actual domain
+        'HTTP-Referer': origin,
         'X-Title': 'Mermaid AI Architect'
       },
       body: JSON.stringify({
