@@ -1,20 +1,133 @@
+# Mermaid AI Architect
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <h3>🤖 AI驱动的Mermaid图表生成器</h3>
+  <p>使用自然语言描述需求，AI自动生成专业的Mermaid图表</p>
 </div>
 
-# Run and deploy your AI Studio app
+## ✨ 功能特性
 
-This contains everything you need to run your app locally.
+### 🎯 智能图表生成
+- **自然语言交互**：用简单的中文描述需求，AI自动生成Mermaid代码
+- **多图表类型支持**：流程图、时序图、类图、状态图、甘特图、思维导图、ER图、饼图、用户旅程、Git提交图、时间轴、象限图
+- **文档解析**：支持PDF文档上传，AI自动分析内容并生成对应图表
+- **图片识别**：支持上传手绘草图或图片，AI识别并转换为标准Mermaid代码
 
-View your app in AI Studio: https://ai.studio/apps/drive/1MwrNdrEDjD2GrLRGIHFESUmkDWAdP37y
+### 🎨 可视化编辑
+- **实时预览**：即时渲染Mermaid图表，所见即所得
+- **代码编辑器**：支持手动编辑Mermaid代码，实时同步预览
+- **颜色自定义**：可调整图表的文本、线条、边框等颜色
+- **网格背景**：支持网格背景，便于对齐和编辑
 
-## Run Locally
+### 📥 多格式导出
+- **SVG格式**：矢量图，无限放大不失真
+- **PNG格式**：高清位图，适合文档使用
+- **JPG格式**：压缩位图，适合分享
+- **PDF格式**：专业文档格式，适合打印和归档
+- **Mermaid代码**：导出原始代码，便于二次编辑
 
-**Prerequisites:**  Node.js
+### 🌙 用户体验
+- **深色/浅色主题**：支持主题切换，适应不同环境
+- **响应式设计**：完美适配桌面和移动设备
+- **AI优化**：AI优化需求描述，提高生成质量
+- **对话式交互**：支持多轮对话，逐步完善需求
 
+### 🔧 高级功能
+- **语法修复**：AI自动修复Mermaid语法错误
+- **模板库**：内置多种图表模板，快速开始
+- **缩放和拖拽**：支持图表缩放和拖拽，方便查看大型图表
+- **全屏模式**：全屏预览，专注查看图表
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 快速开始
+
+### 环境要求
+- Node.js 18+
+- npm 或 yarn
+
+### 安装依赖
+```bash
+npm install
+```
+
+### 配置API密钥
+创建 `.env.local` 文件并设置API密钥：
+```env
+API_KEY=your_openrouter_api_key_here
+```
+
+### 启动开发服务器
+```bash
+npm run dev
+```
+
+访问 http://localhost:3000 开始使用
+
+## 📦 构建部署
+
+### 构建生产版本
+```bash
+npm run build
+```
+
+### 启动生产服务器
+```bash
+npm start
+```
+
+## 🛠️ 技术栈
+
+- **框架**: Next.js 14 (App Router)
+- **UI库**: React 18
+- **样式**: Tailwind CSS
+- **图表引擎**: Mermaid.js 10.9.0
+- **AI服务**: OpenRouter API (支持多种LLM模型)
+- **类型安全**: TypeScript
+- **图标**: Heroicons
+- **PDF生成**: jsPDF
+
+## 📖 使用指南
+
+### 基础使用
+1. 在聊天框中输入需求描述，例如："画一个用户登录流程图"
+2. 选择图表类型（或选择"自动识别"）
+3. 点击发送，AI将生成对应的Mermaid代码
+4. 在右侧预览区域查看生成的图表
+
+### 高级功能
+- **上传文件**：点击上传按钮，选择PDF或图片文件
+- **AI优化**：输入需求后点击"AI优化"，AI会优化你的描述
+- **手动编辑**：在代码编辑器中直接修改Mermaid代码
+- **颜色调整**：点击工具栏的调色板图标，自定义图表颜色
+- **导出图表**：点击下载按钮，选择需要的格式
+
+### 支持的图表类型
+| 类型 | 说明 | 示例 |
+|------|------|------|
+| 流程图 | 展示决策路径和流程步骤 | 登录流程、审批流程 |
+| 时序图 | 展示对象之间的交互顺序 | API调用、系统交互 |
+| 类图 | 展示面向对象的类结构 | 系统架构、数据模型 |
+| 状态图 | 展示系统状态流转 | 订单状态、设备状态 |
+| 甘特图 | 项目进度与时间管理 | 项目计划、里程碑 |
+| 思维导图 | 脑暴与层级结构 | 知识图谱、组织架构 |
+| ER图 | 数据库结构关系 | 数据库设计、表关系 |
+| 饼图 | 数据占比统计 | 市场份额、预算分配 |
+| 用户旅程 | 用户体验路径 | 购物流程、用户行为 |
+| Git提交图 | 版本控制分支记录 | Git历史、分支管理 |
+| 时间轴 | 历史事件记录 | 公司发展史、项目里程碑 |
+| 象限图 | 四象限分析矩阵 | 优先级分析、风险评估 |
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
+
+MIT License
+
+## 🙏 致谢
+
+- [Mermaid.js](https://mermaid.js.org/) - 强大的图表渲染引擎
+- [Next.js](https://nextjs.org/) - React框架
+- [Tailwind CSS](https://tailwindcss.com/) - CSS框架
+- [Heroicons](https://heroicons.com/) - 图标库
+- [OpenRouter](https://openrouter.ai/) - AI模型API服务
