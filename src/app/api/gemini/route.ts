@@ -40,15 +40,15 @@ export async function POST(request: NextRequest) {
 
     if (action === 'generate') {
       const { history, currentCode, diagramType } = data as GenerateRequest;
-      const result = await generateFromHistory(history, currentCode, diagramType);
+      const result = await generateFromHistory(history, currentCode, diagramType, origin);
       return NextResponse.json(result);
     } else if (action === 'fix') {
       const { code, errorMsg } = data as FixRequest;
-      const result = await fixDiagram(code, errorMsg);
+      const result = await fixDiagram(code, errorMsg, origin);
       return NextResponse.json(result);
     } else if (action === 'optimize') {
       const { prompt } = data as OptimizeRequest;
-      const result = await optimizePrompt(prompt);
+      const result = await optimizePrompt(prompt, origin);
       return NextResponse.json(result);
     } else {
       return NextResponse.json(
@@ -71,7 +71,8 @@ export async function POST(request: NextRequest) {
 async function generateFromHistory(
   history: ChatMessage[],
   currentCode?: string,
-  diagramType: DiagramType = 'auto'
+  diagramType: DiagramType = 'auto',
+  origin: string = 'https://mermaid-ai-architect.vercel.app'
 ): Promise<GenAIResponse> {
   // Construct the messages for OpenRouter
   const messages: any[] = [];
@@ -196,7 +197,8 @@ async function generateFromHistory(
  */
 async function fixDiagram(
   code: string,
-  errorMsg: string
+  errorMsg: string,
+  origin: string = 'https://mermaid-ai-architect.vercel.app'
 ): Promise<{ code: string; explanation: string }> {
   const prompt = `The following Mermaid code has a syntax error.
     
@@ -273,7 +275,8 @@ function cleanCode(raw: string): string {
  * Optimizes a prompt for better Mermaid diagram generation.
  */
 async function optimizePrompt(
-  prompt: string
+  prompt: string,
+  origin: string = 'https://mermaid-ai-architect.vercel.app'
 ): Promise<GenAIResponse> {
   const optimizationPrompt = `Please optimize the following prompt for Mermaid diagram generation. The goal is to make it more clear, specific, and suitable for generating accurate Mermaid diagrams.
 
